@@ -1,0 +1,41 @@
+//递归快速幂
+
+int qpow(int a,int n)
+	{
+		if(n==0)return 1;
+		else if(n%2==1)return qpow(a,n-1)*a;
+		else{
+			int temp;
+			temp=qpow(a,n/2);
+			return temp*temp;
+		}
+		}
+
+
+//递归快速幂取模
+int qpow(int a,int n)
+	{
+		if(n==0)return 1;
+		else if(n%2==1)return qpow(a,n-1)*a%mod;
+		else{
+			int temp;
+			temp=qpow(a,n/2)%mod;
+			return temp*temp%mod;
+		}
+		}
+
+//不设置temp的话时间复杂度会变成o(n),因为qpow(a,n/2)要连续算两次。
+
+
+//非递归快速幂
+//注意应变成long long类型防止溢出
+typdef long long 11
+11 qpow(11 a,11 n){
+	11 ans=1;
+	while(n){
+		if(n&1)ans=ans*a;
+		a=a*a;
+		n>>=1; 
+	}
+	return ans;
+} 
