@@ -1,0 +1,25 @@
+//Fibonacci 数列是非常著名的数列:
+
+F[1] = 1,
+
+F[2] = 1,
+
+对于 i > 3，F[i] = F[i − 1] + F[i − 2]
+
+Fibonacci 数列有一个特殊的性质，前一项与后一项的比值，F[i]/F[i + 1]， 会趋近于黄金分割。
+
+为了验证这一性质，给定正整数 N，请你计算 F[N]/F[N + 1]，并保留 8 位 小数。
+
+//防止超时，测试得n>20之后保留八位数字基本没有差别
+def f(n):
+    if n==1 or n==2:
+        return 1
+    else:
+        return f(n-1)+f(n-2)
+    
+N=int(input())
+if N<20:
+    m=f(N)/f(N+1)
+    print(format(m,'.8f'))
+else:
+    print("0.61803399")
