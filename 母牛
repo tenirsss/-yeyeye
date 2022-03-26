@@ -5,11 +5,11 @@ list.append(0)
 list.append(1)
 list.append(2)
 list.append(3)
-for i in range(4,1000):
+for i in range(4,1000)://预处理
     list.append(list[i-1]+list[i-3])
 
 while True:
     n=int(input())
     if n==0:
-        break
-    print(list[n])
+        break//不符合输入要求 直接退出
+    print(list[n])//打印即可
